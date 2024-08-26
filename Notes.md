@@ -2,8 +2,8 @@
 
 - Local Date
 ```java
-import java.time.LocalDate;
 
+import java.time.LocalDate;
 public class LocalDateExample {
     public static void main(String[] args) {
         LocalDate today = LocalDate.now();
@@ -20,10 +20,8 @@ public class LocalDateExample {
 ```
 - Local Time
   ```java
-```
   import java.time.LocalTime;
-
-public class LocalTimeExample {
+    public class LocalTimeExample {
     public static void main(String[] args) {
         LocalTime now = LocalTime.now();
         System.out.println("Current time: " + now);
