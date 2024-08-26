@@ -155,3 +155,85 @@ public class DurationPeriodExample {
     }
     }
   ```
+ - Comparing Date and Time
+   ```java
+   import java.time.LocalDate;
+
+    public class DateComparisonExample {
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2024, 8, 25);
+        LocalDate date2 = LocalDate.of(2024, 8, 26);
+
+        // Comparing dates
+        if (date1.isBefore(date2)) {
+            System.out.println(date1 + " is before " + date2);
+        }
+        
+        if (date1.isAfter(date2)) {
+            System.out.println(date1 + " is after " + date2);
+        }
+        
+        if (date1.isEqual(date2)) {
+            System.out.println(date1 + " is equal to " + date2);
+        }
+    }
+    }
+   ```
+- Adjusting Dates
+
+  ```java
+  import java.time.LocalDate;
+
+    public class DateAdjustmentExample {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        System.out.println("Today's date: " + today);
+
+        // Adjusting the date
+        LocalDate nextMonth = today.plusMonths(1);
+        System.out.println("Same date next month: " + nextMonth);
+        
+        LocalDate lastYear = today.minusYears(1);
+        System.out.println("Same date last year: " + lastYear);
+    }
+    }
+  ```
+- Next Occurence
+  ```java
+  import java.time.LocalDate;
+    import java.time.DayOfWeek;
+
+    public class NextOccurrenceExample {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        System.out.println("Today's date: " + today);
+
+        // Finding the next occurrence of a specific day (e.g., next Monday)
+        LocalDate nextMonday = today.with(DayOfWeek.MONDAY).plusWeeks(today.getDayOfWeek().getValue() < DayOfWeek.MONDAY.getValue() ? 1 : 0);
+        System.out.println("Next Monday's date: " + nextMonday);
+    }
+    }
+  ```
+- Age Calculation
+  ```java
+  import java.time.LocalDate;
+    import java.time.Period;
+
+    public class BusinessLogicExample {
+    public static void main(String[] args) {
+        LocalDate birthDate = LocalDate.of(1990, 8, 25);
+        LocalDate today = LocalDate.now();
+        
+        // Calculate age
+        Period age = Period.between(birthDate, today);
+        System.out.println("Age: " + age.getYears() + " years");
+        
+        // Check if the birthday is today
+        if (today.getMonth() == birthDate.getMonth() && today.getDayOfMonth() == birthDate.getDayOfMonth()) {
+            System.out.println("Happy Birthday!");
+        }
+    }
+    }
+  ```
+
+
