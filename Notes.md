@@ -19,4 +19,20 @@ public class LocalDateExample {
 }
 ```
 - Local Time
-  
+  ```java
+  import java.time.LocalTime;
+```
+public class LocalTimeExample {
+    public static void main(String[] args) {
+        LocalTime now = LocalTime.now();
+        System.out.println("Current time: " + now);
+        
+        LocalTime specificTime = LocalTime.of(14, 30, 0); // 2:30 PM
+        System.out.println("Specific time: " + specificTime);
+        
+        // Adding hours
+        LocalTime nextHour = now.plusHours(1);
+        System.out.println("Next hour: " + nextHour);
+    }
+}
+```
