@@ -134,3 +134,24 @@ public class DurationPeriodExample {
     }
     }
    ```
+
+- Instant
+
+  ```java
+  import java.time.Instant;
+
+    public class InstantExample {
+    public static void main(String[] args) {
+        Instant now = Instant.now();
+        System.out.println("Current instant: " + now);
+
+        // Creating an instant from a specific timestamp (milliseconds since epoch)
+        Instant specificInstant = Instant.ofEpochMilli(1633072800000L); // Corresponds to 2021-10-01T00:00:00Z
+        System.out.println("Specific instant: " + specificInstant);
+        
+        // Adding time to an instant
+        Instant futureInstant = now.plusSeconds(3600); // Adding one hour
+        System.out.println("Future instant (after 1 hour): " + futureInstant);
+    }
+    }
+  ```
